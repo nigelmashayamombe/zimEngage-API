@@ -1,0 +1,53 @@
+# .dockerignore file for optimal Docker builds
+
+# Node.js dependencies
+node_modules/
+
+# PHP dependencies
+vendor/
+
+# Environment and secrets
+.env
+.env.*
+*.pem
+*.key
+*.crt
+
+# Build outputs
+dist/
+build/
+out/
+
+# IDE and editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Version control
+.git/
+.gitignore
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Logs and debug files
+*.log
+
+# Documentation
+*.md
+README*
+
+# Docker files
+Dockerfile*
+docker-compose*
+
+# Specific project patterns
+storage/
+public/
+
+# Exclude files explicitly needed
+!public/index.php
+!storage/app/public/

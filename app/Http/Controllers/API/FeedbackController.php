@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\Jobs\AnalyzeFeedbackSentiment;
 use App\Models\Feedback;
 use Illuminate\Http\Request;
 
@@ -27,6 +28,9 @@ class FeedbackController extends Controller
             'message' => $request->message,
             'status' => 'pending',
         ]);
+
+        // Dispatch job to analyze sentiment
+        AnalyzeFeedbackSentiment::dispatch($feedback);
 
         return response()->json($feedback, 201);
     }
